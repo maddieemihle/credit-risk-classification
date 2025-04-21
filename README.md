@@ -1,14 +1,13 @@
 # Credit Risk Analysis Report 
 
 ## Introduction 
-The purpose of this analysis is to build and evaluate machine learning models to predict loan risk: healthy ("low risk") or "high-risk". This analysis will help the company make informed decisions about loan approvals based on historical data. 
+The purpose of this analysis is to build and evaluate machine learning models to predict loan risk: healthy ("low risk") or "high-risk". The goal is to help make informed loan approval decisions based on historical data.
 
 ## Overview of the Analysis
 
-The dataset contained financial information about loans, such as loan amount, interest rate, and borrower information. The target variable, `loan_status`, was binary, with `0` representing healthy loans and `1` representing high-risk loans. The goal was to predict the `loan_status` variable, which indicates the risk level of a loan. The value counts for the target variable showed a significant class imbalance, with far more healthy loans than high-risk loans.
+The dataset contains financial information about loans, such as loan amount, interest rate, and borrower details. The target variable, `loan_status`, is binary, with `0` representing healthy loans and `1` representing high-risk loans. The dataset shows a significant class imbalance, with more healthy loans than high-risk loans.
 
 The stages of the machine learning process included:
-
 1. Splitting the data into training and testing sets.
 2. Standardizing the features to improve model performance.
 3. Training and evaluating two machine learning models:
@@ -18,19 +17,18 @@ The stages of the machine learning process included:
 
 By comparing Logistic Regression with Random Forest, we aimed to determine which model performs better for this classification task.
 
-### Methods Further Explained:  
+### Methods:  
 **1. Data Preprocessing:**
-* The dataset was split into features (`X`) and labels (`y`).
-* The data was divided into training and testing sets using `train_test_split` with a `random_state` for reproducibility.
-* Features were standardized using a `StandardScaler` to normalize the data and improve model performance.
+* Split the dataset into features (`X`) and labels (`y`).
+* Use `train_test_split` for training and testing sets.
+* Standardize features with `StandardScaler`.
 
-**2. Machine Learning Model:**
+**2. Machine Learning Models:**
 * Two models were used for comparison: Logistic Regression & Random Forest 
 
 **3. Model Evaluation:**
 * `confusion_matrix`: Used to evaluate the number of true positives, true negatives, false positives, and false negatives for both models.
 * `classification_report`: Generated to calculate precision, recall, F1-score, and accuracy for both classes (`0` for healthy loans and `1` for high-risk loans).
-* Metrics were compared between Logistic Regression and Random Forest to determine which model performed better for the classification task.
 
 ## Results
 ### Machine Learning Model 1: Logistic Regression 
@@ -47,14 +45,14 @@ By comparing Logistic Regression with Random Forest, we aimed to determine which
 **Classification Report Analysis:**
 * Accuracy: 99%
 * Precision:
-    * `low_risk` (0): 1.00 (perfect precision, no false positives).
-    * `high_risk` (1): 0.84 (some false positives, but still strong).
+    * `low_risk` (0): 1.00 
+    * `high_risk` (1): 0.84 
 * Recall:
-    * `low_risk` (0): 0.99 (almost all healthy loans are correctly identified).
-    * `high_risk` (1): 0.94 (most high-risk loans are correctly identified).
+    * `low_risk` (0): 0.99 
+    * `high_risk` (1): 0.94
 * F1-Score:
-    * `low_risk` (0): 1.00 (excellent balance of precision and recall).
-    * `high_risk` (1): 0.89 (strong performance, though slightly lower than for healthy loans).
+    * `low_risk` (0): 1.00 
+    * `high_risk` (1): 0.89 
 
 ### Machine Learning Model 2: Random Forest 
 **Confusion Matrix Analysis:**
@@ -70,14 +68,14 @@ By comparing Logistic Regression with Random Forest, we aimed to determine which
 **Classification Report Analysis:**
 * Accuracy: 99%
 * Precision:
-    * `low_risk` (0): 1.00 (perfect precision, no false positives for healthy loans).
-    * `high_risk` (1): 0.85 (strong precision, though slightly lower than Logistic Regression, indicating some healthy loans are misclassified as high-risk).
+    * `low_risk` (0): 1.00 
+    * `high_risk` (1): 0.85 
 * Recall:
-    * `low_risk` (0): 0.99 (almost all healthy loans are correctly identified)
-    * `high_risk` (1): 0.89 (slightly lower recall compared to Logistic Regression, meaning more high-risk loans are missed)
+    * `low_risk` (0): 0.99
+    * `high_risk` (1): 0.89 
 * F1-Score:
-    * `low_risk` (0): 1.00 (excellent balance of precision and recall).
-    * `high_risk` (1): 0.87 (strong performance, though slightly lower than Logistic Regression)
+    * `low_risk` (0): 1.00 
+    * `high_risk` (1): 0.87 
 
 ## Summary
 Both models performed exceptionally well, achieving high accuracy and strong metrics for both `0` (healthy loans) and `1` (high-risk loans). However, there are some differences:
@@ -96,7 +94,6 @@ Again, the choice of the model depends on the business objective:
 Overall, the Logistic Regression is slightly better suited in credit risk classification. Its high accuracy and strong recall for high-risk loans make it a reliable tool for identifying risky loans. It should be noted that further improvements could focus on reducing false positives for high-risk loans to enhance precision. This would ensure fewer healthy loans are incorrectly flagged as high-risk, improving the model's overall utility for decision-making. However, the Random Forest model provides a strong alternative with comparable performance. 
 
 ### Tools & Technologies Used 
-* Visual Studio Code 
 * Python
 * Pandas
 * Scikit-learn: 
@@ -107,6 +104,7 @@ Overall, the Logistic Regression is slightly better suited in credit risk classi
     * `confusion_matrix`
     * `classification_report`
 * Jupyter Notebook 
+* Visual Studio Code 
 
 ## References 
 Data for this dataset was generated by _edX Boot Camps LLC_, and is intended for educational purposes only.
