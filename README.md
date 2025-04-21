@@ -1,34 +1,36 @@
 # Credit Risk Analysis Report 
 
 ## Introduction 
-The purpose of this analysis is to build and evaluate a machine learning model to predict loan risk. By using a logistic regression model, we aim to classify loans as either "healthy" (low risk) or "high-risk" based on historical data. This analysis will help the company make informed decisions about loan approvals.
+The purpose of this analysis is to build and evaluate machine learning models to predict loan risk: healthy ("low risk") or "high-risk". This analysis will help the company make informed decisions about loan approvals based on historical data. 
 
 ## Overview of the Analysis
 
 The dataset contained financial information about loans, such as loan amount, interest rate, and borrower information. The target variable, `loan_status`, was binary, with `0` representing healthy loans and `1` representing high-risk loans. The goal was to predict the `loan_status` variable, which indicates the risk level of a loan. The value counts for the target variable showed a significant class imbalance, with far more healthy loans than high-risk loans.
 
-The machine learning process involved the following steps:
+The stages of the machine learning process included:
+
 1. Splitting the data into training and testing sets.
-2. Scaling the features to standardize the data.
-3. Training a logistic regression model to classify loans as either healthy or high-risk.
-4. Evaluating the model's performance using metrics such as accuracy, precision, recall, and F1-score.
+2. Standardizing the features to improve model performance.
+3. Training and evaluating two machine learning models:
+    * **Logistic Regression:** A linear model for binary classification.
+    * **Random Forest:** A non-linear ensemble model for comparison.
+4. Evaluating the models using metrics such as accuracy, precision, recall, and F1-score.
 
-The logistic regression algorithm was chosen for its simplicity and effectiveness in binary classification problems.
+By comparing Logistic Regression with Random Forest, we aimed to determine which model performs better for this classification task.
 
-### Methods Used 
+### Methods Further Explained:  
 **1. Data Preprocessing:**
 * The dataset was split into features (`X`) and labels (`y`).
 * The data was divided into training and testing sets using `train_test_split` with a `random_state` for reproducibility.
-* Features were standardized using a scaler to normalize the data and improve model performance.
+* Features were standardized using a `StandardScaler` to normalize the data and improve model performance.
 
 **2. Machine Learning Model:**
-* The Logistic Regression model was implemented for binary classification. 
-* This algorithm was chosen for its simplicity and effectiveness in predicting categorical outcomes.
+* Two models were used for comparison: Logistic Regression & Random Forest 
 
 **3. Model Evaluation:**
-* Confusion Matrix: Used to evaluate the number of true positives, true negatives, false positives, and false negatives.
-* Classification Report: Generated to calculate precision, recall, F1-score, and accuracy for both classes (`0` for healthy loans and `1` for high-risk loans).
-
+* `confusion_matrix`: Used to evaluate the number of true positives, true negatives, false positives, and false negatives for both models.
+* `classification_report`: Generated to calculate precision, recall, F1-score, and accuracy for both classes (`0` for healthy loans and `1` for high-risk loans).
+* Metrics were compared between Logistic Regression and Random Forest to determine which model performed better for the classification task.
 
 ## Results
 #### Machine Learning Model 1: Logistic Regression 
@@ -44,38 +46,64 @@ The logistic regression algorithm was chosen for its simplicity and effectivenes
     * The model is effective at identifying high-risk loans, though it misses a small number of them.
 
 **Classification Report Analysis:**
+* Accuracy: 99%
 * Precision:
-    * For `low_risk` (0): 1.00 (perfect precision, no false positives).
-    * For `high_risk` (1): 0.84 (some false positives, but still strong).
+    * `low_risk` (0): 1.00 (perfect precision, no false positives).
+    * `high_risk` (1): 0.84 (some false positives, but still strong).
 
 * Recall:
-    * For `low_risk` (0): 0.99 (almost all healthy loans are correctly identified).
-    * For `high_risk` (1): 0.94 (most high-risk loans are correctly identified).
+    * `low_risk` (0): 0.99 (almost all healthy loans are correctly identified).
+    * `high_risk` (1): 0.94 (most high-risk loans are correctly identified).
     
 * F1-Score:
-    * For `low_risk` (0): 1.00 (excellent balance of precision and recall).
-    * For `high_risk` (1): 0.89 (strong performance, though slightly lower than for healthy loans).
+    * `low_risk` (0): 1.00 (excellent balance of precision and recall).
+    * `high_risk` (1): 0.89 (strong performance, though slightly lower than for healthy loans).
 
-**Overall Performance:**
-* Accuracy: 99% (The model is highly accurate overall).
-* Macro Average: Indicates strong performance across both classes.
-    * Precision (0.92)
-    * Recall (0.97)
-    * F1-Score (0.94) 
-* Weighted Average: Precision, Recall, and F1-Score are all 0.99, reflecting the dominance of the `low_risk` class in the dataset.
+#### Machine Learning Model 2: Random Forest 
+**Confusion Matrix Analysis:**
+* Healthy Loans (`0`):
+    * True Positives: 18,666
+    * False Negatives: 99
+    * The model performs exceptionally well in predicting healthy loans, with very few misclassifications.
+
+* High-Risk Loans (`1`):
+    * True Positives: 553
+    * False Negatives: 66
+    * The model is effective at identifying high-risk loans but misses more high-risk loans compared to Logistic Regression.
+
+**Classification Report Analysis:**
+* Accuracy: 99%
+* Precision:
+    * `low_risk` (0): 1.00 (perfect precision, no false positives for healthy loans).
+    * `high_risk` (1): 0.85 (strong precision, though slightly lower than Logistic Regression, indicating some healthy loans are misclassified as high-risk).
+* Recall:
+    * `low_risk` (0): 0.99 (almost all healthy loans are correctly identified)
+    * `high_risk` (1): 0.89 (slightly lower recall compared to Logistic Regression, meaning more high-risk loans are missed)
+* F1-Score:
+    * `low_risk` (0): 1.00 (excellent balance of precision and recall).
+    * `high_risk` (1): 0.87 (strong performance, though slightly lower than Logistic Regression)
 
 ## Summary
-The logistic regression model performed exceptionally well, achieving high accuracy, precision, and recall for both healthy and high-risk loans. 
+Both models performed exceptionally well, achieving high accuracy and strong metrics for both `0` (healthy loans) and `1` (high-risk loans). However, there are some differences:
 
-It excelled at predicting healthy loans (`0`) with near-perfect precision and recall. For high-risk loans (`1`), the model demonstrated strong performance, with a recall of 94%, meaning it identified most high-risk loans correctly. However, the slightly lower precision (84%) indicates some healthy loans were misclassified as high-risk.
+* Logistic Regression:
+    * Achieved slightly higher recall (94%) for high-risk loans, meaning it identified more high-risk loans correctly.
+    * Slightly lower precision (84%) for high-risk loans, meaning it had more false positives compared to Random Forest.
+* Random Forest:
+    * Achieved slightly higher precision (85%) for high-risk loans, meaning it had fewer false positives.
+    * Slightly lower recall (89%) for high-risk loans, meaning it missed more high-risk loans compared to Logistic Regression.
 
-Overall, the logistic regression model is recommended for use in credit risk classification. Its high accuracy and strong recall for high-risk loans make it a reliable tool for identifying risky loans. However, further improvements could focus on reducing false positives for high-risk loans to enhance precision. This would ensure fewer healthy loans are incorrectly flagged as high-risk, improving the model's overall utility for decision-making.
+Again, the choice of the model depends on the business objective: 
+* If minimizing false negatives (missing high-risk loans) is more critical, Logistic Regression is recommended due to its higher recall for high-risk loans.
+* If minimizing false positives (flagging healthy loans as high-risk) is more important, Random Forest is recommended due to its higher precision for high-risk loans.
+
+Overall, the Logistic Regression is slightly better suited in credit risk classification. Its high accuracy and strong recall for high-risk loans make it a reliable tool for identifying risky loans. It should be noted that further improvements could focus on reducing false positives for high-risk loans to enhance precision. This would ensure fewer healthy loans are incorrectly flagged as high-risk, improving the model's overall utility for decision-making. However, the Random Forest model provides a strong alternative with comparable performance. 
 
 ### Tools & Technologies Used 
 * Visual Studio Code 
 * Python
 * Pandas
-* Scikit-learn: train_test_split, LogisticRegression, StandardScaler, Confusion Matrix, and Classification Report
+* Scikit-learn: train_test_split, LogisticRegression, RandomForestClassifier StandardScaler, confusion_matrix, and classification_report
 * Jupyter Notebook 
 
 ## References 
