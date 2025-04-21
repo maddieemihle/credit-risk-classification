@@ -33,7 +33,7 @@ By comparing Logistic Regression with Random Forest, we aimed to determine which
 * Metrics were compared between Logistic Regression and Random Forest to determine which model performed better for the classification task.
 
 ## Results
-#### Machine Learning Model 1: Logistic Regression 
+### Machine Learning Model 1: Logistic Regression 
 **Confusion Matrix Analysis:**
 * Healthy Loans (`0`):
     * True Positives: 18,658
@@ -59,7 +59,7 @@ By comparing Logistic Regression with Random Forest, we aimed to determine which
     * `low_risk` (0): 1.00 (excellent balance of precision and recall).
     * `high_risk` (1): 0.89 (strong performance, though slightly lower than for healthy loans).
 
-#### Machine Learning Model 2: Random Forest 
+### Machine Learning Model 2: Random Forest 
 **Confusion Matrix Analysis:**
 * Healthy Loans (`0`):
     * True Positives: 18,666
