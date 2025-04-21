@@ -30,6 +30,8 @@ By comparing Logistic Regression with Random Forest, we aimed to determine which
 * `confusion_matrix`: Used to evaluate the number of true positives, true negatives, false positives, and false negatives for both models.
 * `classification_report`: Generated to calculate precision, recall, F1-score, and accuracy for both classes (`0` for healthy loans and `1` for high-risk loans).
 
+Jupyter Notebook: [Here](https://github.com/maddieemihle/credit-risk-classification/blob/main/Credit_Risk/credit_risk_classification.ipynb)
+
 ## Results
 ### Machine Learning Model 1: Logistic Regression 
 **Confusion Matrix Analysis:**
