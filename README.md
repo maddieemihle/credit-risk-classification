@@ -39,7 +39,6 @@ By comparing Logistic Regression with Random Forest, we aimed to determine which
     * True Positives: 18,658
     * False Negatives: 107
     * The model performs exceptionally well in predicting healthy loans, with very few misclassifications.
-
 * High-Risk Loans (`1`):
     * True Positives: 582
     * False Negatives: 37
@@ -50,11 +49,9 @@ By comparing Logistic Regression with Random Forest, we aimed to determine which
 * Precision:
     * `low_risk` (0): 1.00 (perfect precision, no false positives).
     * `high_risk` (1): 0.84 (some false positives, but still strong).
-
 * Recall:
     * `low_risk` (0): 0.99 (almost all healthy loans are correctly identified).
     * `high_risk` (1): 0.94 (most high-risk loans are correctly identified).
-    
 * F1-Score:
     * `low_risk` (0): 1.00 (excellent balance of precision and recall).
     * `high_risk` (1): 0.89 (strong performance, though slightly lower than for healthy loans).
@@ -65,7 +62,6 @@ By comparing Logistic Regression with Random Forest, we aimed to determine which
     * True Positives: 18,666
     * False Negatives: 99
     * The model performs exceptionally well in predicting healthy loans, with very few misclassifications.
-
 * High-Risk Loans (`1`):
     * True Positives: 553
     * False Negatives: 66
@@ -103,7 +99,13 @@ Overall, the Logistic Regression is slightly better suited in credit risk classi
 * Visual Studio Code 
 * Python
 * Pandas
-* Scikit-learn: train_test_split, LogisticRegression, RandomForestClassifier StandardScaler, confusion_matrix, and classification_report
+* Scikit-learn: 
+    * `train_test_split`
+    * `LogisticRegression`
+    * `RandomForestClassifier` 
+    * `StandardScaler`
+    * `confusion_matrix`
+    * `classification_report`
 * Jupyter Notebook 
 
 ## References 
