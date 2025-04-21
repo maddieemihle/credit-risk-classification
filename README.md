@@ -93,7 +93,7 @@ Again, the choice of the model depends on the business objective:
 * If minimizing false negatives (missing high-risk loans) is more critical, Logistic Regression is recommended due to its higher recall for high-risk loans.
 * If minimizing false positives (flagging healthy loans as high-risk) is more important, Random Forest is recommended due to its higher precision for high-risk loans.
 
-Overall, the Logistic Regression is slightly better suited in credit risk classification. Its high accuracy and strong recall for high-risk loans make it a reliable tool for identifying risky loans. It should be noted that further improvements could focus on reducing false positives for high-risk loans to enhance precision. This would ensure fewer healthy loans are incorrectly flagged as high-risk, improving the model's overall utility for decision-making. However, the Random Forest model provides a strong alternative with comparable performance. 
+Overall, the Logistic Regression is slightly better suited for credit risk classification, while the Random Forest model provides a strong alternative with comparable performance. Its high accuracy and strong recall for high-risk loans make it a reliable tool for identifying risky loans. However, further improvements could focus on reducing false positives for high-risk loans to enhance precision. This would ensure fewer healthy loans are incorrectly flagged as high-risk, improving the model's overall utility for decision-making.
 
 ## Tools & Technologies Used 
 * Python
