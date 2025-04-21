@@ -95,7 +95,7 @@ Again, the choice of the model depends on the business objective:
 
 Overall, the Logistic Regression is slightly better suited in credit risk classification. Its high accuracy and strong recall for high-risk loans make it a reliable tool for identifying risky loans. It should be noted that further improvements could focus on reducing false positives for high-risk loans to enhance precision. This would ensure fewer healthy loans are incorrectly flagged as high-risk, improving the model's overall utility for decision-making. However, the Random Forest model provides a strong alternative with comparable performance. 
 
-### Tools & Technologies Used 
+## Tools & Technologies Used 
 * Python
 * Pandas
 * Scikit-learn: 
